@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useMiniKit } from '@coinbase/minikit';
+import { useOnchainKit } from '@coinbase/onchainkit';
 import { GigDiscovery } from '../components/GigDiscovery';
 import { IncomeTracker } from '../components/IncomeTracker';
 import { InvoiceGenerator } from '../components/InvoiceGenerator';
@@ -13,7 +13,7 @@ type Tab = 'discovery' | 'income' | 'invoices' | 'profile';
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<Tab>('discovery');
-  const { user } = useMiniKit();
+  const { address } = useOnchainKit();
 
   const renderContent = () => {
     switch (activeTab) {
@@ -32,7 +32,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header user={user} />
+      <Header user={{ displayName: address ? 'User' : 'Guest' }} />
       
       <div className="pb-20">
         {renderContent()}

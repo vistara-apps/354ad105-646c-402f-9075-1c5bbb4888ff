@@ -28,7 +28,7 @@ export function Navigation({ activeTab, onTabChange }: NavigationProps) {
                 'flex flex-col items-center space-y-1 py-2 px-3 rounded-lg transition-colors duration-200',
                 activeTab === id
                   ? 'text-primary bg-primary/10'
-                  : 'text-muted hover:text-foreground hover:bg-muted/10'
+                  : 'text-muted hover:text-gray-900 hover:bg-muted/10'
               )}
             >
               <Icon className="w-5 h-5" />

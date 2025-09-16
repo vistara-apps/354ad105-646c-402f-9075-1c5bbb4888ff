@@ -77,7 +77,7 @@ export function InvoiceGenerator() {
     <div className="space-y-6 py-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-foreground">Invoices</h2>
+        <h2 className="text-2xl font-bold text-gray-900">Invoices</h2>
         <Button onClick={() => setShowCreateModal(true)}>
           <Plus className="w-4 h-4 mr-2" />
           Create Invoice
@@ -93,7 +93,7 @@ export function InvoiceGenerator() {
             </div>
             <div>
               <p className="text-sm text-muted">Pending Payment</p>
-              <p className="text-xl font-bold text-foreground">
+              <p className="text-xl font-bold text-gray-900">
                 {formatCurrency(totalPending)}
               </p>
             </div>
@@ -107,7 +107,7 @@ export function InvoiceGenerator() {
             </div>
             <div>
               <p className="text-sm text-muted">Total Paid</p>
-              <p className="text-xl font-bold text-foreground">
+              <p className="text-xl font-bold text-gray-900">
                 {formatCurrency(totalPaid)}
               </p>
             </div>
@@ -117,13 +117,13 @@ export function InvoiceGenerator() {
 
       {/* Invoice List */}
       <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-foreground">Recent Invoices</h3>
+        <h3 className="text-lg font-semibold text-gray-900">Recent Invoices</h3>
         {invoices.map((invoice) => (
           <Card key={invoice.id} className="p-4">
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="flex items-center space-x-3 mb-2">
-                  <h4 className="font-medium text-foreground">
+                  <h4 className="font-medium text-gray-900">
                     {invoice.invoiceNumber}
                   </h4>
                   <span className={`px-2 py-1 text-xs rounded-full ${getStatusColor(invoice.status)}`}>

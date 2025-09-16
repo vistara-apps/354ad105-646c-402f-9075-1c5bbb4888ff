@@ -15,7 +15,7 @@ export function Header({ user }: HeaderProps) {
             <span className="text-white font-bold text-sm">G</span>
           </div>
           <div>
-            <h1 className="text-lg font-bold text-foreground">GigFlow</h1>
+            <h1 className="text-lg font-bold text-gray-900">GigFlow</h1>
             <p className="text-xs text-muted">Side Hustle Marketplace</p>
           </div>
         </div>

@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { User, Wallet, Settings, Star } from 'lucide-react';
-import { useMiniKit } from '@coinbase/minikit';
+import { useOnchainKit } from '@coinbase/onchainkit';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
 import { TextInput } from './ui/TextInput';
 
 export function ProfileSetup() {
-  const { user } = useMiniKit();
+  const { address } = useOnchainKit();
   const [skills, setSkills] = useState<string[]>(['React', 'TypeScript', 'Next.js']);
   const [newSkill, setNewSkill] = useState('');
   const [bio, setBio] = useState('Full-stack developer with 5+ years of experience building modern web applications.');
@@ -29,16 +29,16 @@ export function ProfileSetup() {
       {/* Header */}
       <div className="text-center space-y-2">
         <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto">
-          {user?.displayName ? (
+          {address ? (
             <span className="text-white text-2xl font-bold">
-              {user.displayName.charAt(0).toUpperCase()}
+              {address.slice(0, 2).toUpperCase()}
             </span>
           ) : (
             <User className="w-8 h-8 text-white" />
           )}
         </div>
-        <h2 className="text-2xl font-bold text-foreground">
-          {user?.displayName || 'Your Profile'}
+        <h2 className="text-2xl font-bold text-gray-900">
+          {address ? 'Your Profile' : 'Your Profile'}
         </h2>
         <p className="text-muted">Manage your freelance profile</p>
       </div>
@@ -56,7 +56,7 @@ export function ProfileSetup() {
         <Card className="p-4 text-center">
           <div className="flex items-center justify-center space-x-1">
             <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-            <span className="text-2xl font-bold text-foreground">4.9</span>
+            <span className="text-2xl font-bold text-gray-900">4.9</span>
           </div>
           <div className="text-sm text-muted">Rating</div>
         </Card>
@@ -64,7 +64,7 @@ export function ProfileSetup() {
 
       {/* Bio Section */}
       <Card className="p-4 space-y-4">
-        <h3 className="text-lg font-semibold text-foreground">Bio</h3>
+        <h3 className="text-lg font-semibold text-gray-900">Bio</h3>
         <textarea
           value={bio}
           onChange={(e) => setBio(e.target.value)}
@@ -77,7 +77,7 @@ export function ProfileSetup() {
 
       {/* Skills Section */}
       <Card className="p-4 space-y-4">
-        <h3 className="text-lg font-semibold text-foreground">Skills</h3>
+        <h3 className="text-lg font-semibold text-gray-900">Skills</h3>
         
         <div className="flex flex-wrap gap-2">
           {skills.map((skill) => (
@@ -113,14 +113,14 @@ export function ProfileSetup() {
       <Card className="p-4 space-y-4">
         <div className="flex items-center space-x-3">
           <Wallet className="w-5 h-5 text-primary" />
-          <h3 className="text-lg font-semibold text-foreground">Wallet</h3>
+          <h3 className="text-lg font-semibold text-gray-900">Wallet</h3>
         </div>
         
-        {user ? (
+        {address ? (
           <div className="space-y-2">
             <p className="text-sm text-muted">Connected Wallet</p>
             <p className="font-mono text-sm bg-muted/10 p-2 rounded">
-              {user.address || 'Not connected'}
+              {address}
             </p>
           </div>
         ) : (
@@ -135,20 +135,20 @@ export function ProfileSetup() {
       <Card className="p-4 space-y-4">
         <div className="flex items-center space-x-3">
           <Settings className="w-5 h-5 text-primary" />
-          <h3 className="text-lg font-semibold text-foreground">Settings</h3>
+          <h3 className="text-lg font-semibold text-gray-900">Settings</h3>
         </div>
         
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-foreground">Email Notifications</span>
+            <span className="text-gray-900">Email Notifications</span>
             <input type="checkbox" defaultChecked className="rounded" />
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-foreground">Push Notifications</span>
+            <span className="text-gray-900">Push Notifications</span>
             <input type="checkbox" defaultChecked className="rounded" />
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-foreground">Profile Visibility</span>
+            <span className="text-gray-900">Profile Visibility</span>
             <select className="border border-muted/30 rounded px-2 py-1 text-sm">
               <option>Public</option>
               <option>Private</option>

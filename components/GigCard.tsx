@@ -26,7 +26,7 @@ export function GigCard({ gig }: GigCardProps) {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-foreground mb-1">
+          <h3 className="text-lg font-semibold text-gray-900 mb-1">
             {gig.title}
           </h3>
           <div className="flex items-center space-x-4 text-sm text-muted">
@@ -53,7 +53,7 @@ export function GigCard({ gig }: GigCardProps) {
       </div>
 
       {/* Description */}
-      <p className="text-foreground text-sm leading-relaxed">
+      <p className="text-gray-900 text-sm leading-relaxed">
         {gig.description}
       </p>
 
