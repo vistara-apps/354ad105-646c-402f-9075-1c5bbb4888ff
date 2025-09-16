@@ -22,7 +22,7 @@ export function GigDiscovery() {
       {/* Search and Filter */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-foreground">Discover Gigs</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Discover Gigs</h2>
           <Button variant="outline" size="sm">
             <Filter className="w-4 h-4 mr-2" />
             Filter

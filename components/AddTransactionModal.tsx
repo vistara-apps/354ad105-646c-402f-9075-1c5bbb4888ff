@@ -41,7 +41,7 @@ export function AddTransactionModal({ onClose, onAdd }: AddTransactionModalProps
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
       <Card className="w-full max-w-md p-6 space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-foreground">Add Transaction</h3>
+          <h3 className="text-lg font-semibold text-gray-900">Add Transaction</h3>
           <button
             onClick={onClose}
             className="p-1 hover:bg-muted/20 rounded-lg transition-colors duration-200"

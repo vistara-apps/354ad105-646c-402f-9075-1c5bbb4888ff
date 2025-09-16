@@ -73,7 +73,7 @@ export function CreateInvoiceModal({ onClose, onCreate }: CreateInvoiceModalProp
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 overflow-y-auto">
       <Card className="w-full max-w-2xl p-6 space-y-6 my-8">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-foreground">Create Invoice</h3>
+          <h3 className="text-lg font-semibold text-gray-900">Create Invoice</h3>
           <button
             onClick={onClose}
             className="p-1 hover:bg-muted/20 rounded-lg transition-colors duration-200"
@@ -85,7 +85,7 @@ export function CreateInvoiceModal({ onClose, onCreate }: CreateInvoiceModalProp
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Client Information */}
           <div className="space-y-4">
-            <h4 className="font-medium text-foreground">Client Information</h4>
+            <h4 className="font-medium text-gray-900">Client Information</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <TextInput
                 label="Client Name"
@@ -106,10 +106,10 @@ export function CreateInvoiceModal({ onClose, onCreate }: CreateInvoiceModalProp
 
           {/* Invoice Details */}
           <div className="space-y-4">
-            <h4 className="font-medium text-foreground">Invoice Details</h4>
+            <h4 className="font-medium text-gray-900">Invoice Details</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1">
+                <label className="block text-sm font-medium text-gray-900 mb-1">
                   Invoice Number
                 </label>
                 <div className="px-3 py-2 bg-muted/10 border border-muted/30 rounded-lg text-muted">
@@ -129,7 +129,7 @@ export function CreateInvoiceModal({ onClose, onCreate }: CreateInvoiceModalProp
           {/* Line Items */}
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h4 className="font-medium text-foreground">Line Items</h4>
+              <h4 className="font-medium text-gray-900">Line Items</h4>
               <Button type="button" variant="outline" size="sm" onClick={addItem}>
                 <Plus className="w-4 h-4 mr-1" />
                 Add Item
@@ -195,7 +195,7 @@ export function CreateInvoiceModal({ onClose, onCreate }: CreateInvoiceModalProp
 
           {/* Notes */}
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-foreground">
+            <label className="block text-sm font-medium text-gray-900">
               Notes (Optional)
             </label>
             <textarea
